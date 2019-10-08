@@ -1,0 +1,5 @@
+As the mobile application is build on Phonegap, it will be working on android/iOS and also on mobile web.
+
+As we have 2 phones and 5 resources, I will advice my team members to use web browsers on desktop/laptop and minimize their window to that of the required phone window size. The functionalities of the application should be working on the mobile web as web. 
+In this manner, we will be testing the functionalities which are common for both on android and ios on Desktop/Laptop browsers.
+Apart from that we will be testing the OS specific specialities on the Mobile devices. 

@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>Palindrome</title>
+    <script type="text/javascript">
+
+        // Function to find whether the number / string is palindrome or not
+        function palindrome() {
+            var str = document.getElementById("no_input").value;
+            var flag = true;
+            var len = str.length;
+            var mid = Math.floor(len / 2);
+            if (len < 2) {
+                alert('Enter valid data');
+                return false;
+            }
+            for (var i = 0; i < mid; i++) {
+                if (str[i] !== str[len - 1 - i]) {
+                    flag = false;
+                    alert(str + ' is not a palindrome.');
+                    break;
+                }
+            }
+            if (flag == true) {
+                alert(str + ' is a palindrome.');
+            }
+            return flag;
+        }
+
+        // Function to change the color of the button
+        function changeColor() {
+            document.getElementById("button").style.backgroundColor = "red";
+        }
+
+        // Function to read text from a file
+        function loadFileAsText() {
+            var fileToLoad = document.getElementById("fileToLoad").files[0];
+            if(fileToLoad==null){
+                alert("Please select a file");
+                return;
+            }
+            var fileReader = new FileReader();
+            fileReader.onload = function (fileLoadedEvent) {
+                var textFromFileLoaded = fileLoadedEvent.target.result;
+                document.getElementById("demo").value = textFromFileLoaded;
+            }
+
+            fileReader.readAsText(fileToLoad, "UTF-8");
+        }
+
+    </script>
+
+<body>
+    Enter any Number/String:
+    <input id="no_input">
+    <button onclick="palindrome(), changeColor()" id="button">Check</button></br></br>
+    <tr>
+        <td>Select a File to Load:</td>
+        <td><input type="file" id="fileToLoad"></td>
+        <td><button onclick="loadFileAsText()">Load Selected File</button>
+        <td>
+    </tr>
+    </br></br>
+    The Text in the file is as follows ::
+    </br>
+    <textarea id="demo" style="width:400px;height:150px;"></textarea>
+</body>
+
+</head>
